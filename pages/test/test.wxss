@@ -1,1 +1,12 @@
 /* pages/test/test.wxss */
+.div1 {
+  color: red;
+}
+
+#div-1 {
+  border: 1px solid black;
+}
+
+.active {
+  color: #e84e40;
+}

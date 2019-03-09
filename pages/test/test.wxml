@@ -1,2 +1,67 @@
 <!--pages/test/test.wxml-->
-<text>pages/test/test.wxml</text>
+<view class="div1" id="div-{{number}}">{{message}}</view>
+
+<view wx:if="{{condition}}">我是显示的</view>
+
+<view wx:else>我是else不显示的</view>
+
+<view wx:if="{{!condition}}">我是不显示的</view>
+
+<!-- wx:for-index   wx:for-item  wx:key的组合使用 -->
+<view wx:for="{{arr}}" wx:for-index="xx" wx:for-item="xxx" wx:key="xxx.id">
+  {{xx}}{{xxx.id}}{{xxx.text}}
+</view>
+
+<view wx:for="{{arr}}" wx:for-index="index" wx:for-item="item" wx:key="item.id">
+  {{index}}--{{item.id}}--{{item.text}}
+</view>
+
+<!-- block标签可以变成一行字，没有任何标签 -->
+<block wx:for="{{arr}}" wx:for-index="xx" wx:for-item="xxx" wx:key="xxx.id">
+  {{xx}}{{xxx.id}}{{xxx.text}}
+</block>
+
+<!-- <navigator url="/pages/test/test?id=1">跳转</navigator>
+路径/pages/test/test?id=1  最前面的/要加 在跳转页的onLoad函数的参数中会传递{id: "1"} -->
+
+<view>--------------------------</view>
+<view>{{str}}</view>
+<button bindtap="reverseStr">点击翻转字符串</button>
+
+<view>--------------------------</view>
+<!-- 默认参数就是index和item -->
+<!-- 直接在js中修改也是改变了的，但是要改变视图层的就必须用setData方法 -->
+<!-- 小程序中push方法貌似不能用，用concat -->
+<view wx:for="{{array}}" wx:key="index">
+  {{index}}--{{item}}
+</view>
+<button bindtap="pushItem">点击push</button>
+
+<view>--------------------------</view>
+<view>{{object.id}}--{{object.message}}</view>
+<button bindtap='changeObjText'>点击改变信息</button>
+
+<view>--------------------------</view>
+<view class="{{ xxx ? 'active' : ''}}">变色一行字</view>
+<button bindtap='changeClass'>点击变色</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view>--</view>
