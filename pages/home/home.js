@@ -5,7 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+    lists:[],
+    visible: false
 
+  },
+  confirm(event){
+    console.log(event)
+  },
+  cancel(event){
+    console.log(event)
   },
 
   /**
